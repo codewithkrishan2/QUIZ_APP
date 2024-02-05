@@ -1,0 +1,40 @@
+package com.kksg.quiz.services.impl;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.kksg.quiz.entities.Quiz;
+import com.kksg.quiz.repos.QuizRepo;
+import com.kksg.quiz.services.QuizService;
+
+public class QuizServiceImpl implements QuizService {
+
+	private QuizRepo quizRepo;
+	
+	public QuizServiceImpl() {
+		
+	}
+	
+	
+	public QuizServiceImpl(QuizRepo quizRepo) {
+		super();
+		this.quizRepo = quizRepo;
+	}
+
+	@Override
+	public Quiz addQuiz(Quiz quiz) {
+		return this.quizRepo.save(quiz);
+		
+	}
+
+	@Override
+	public List<Quiz> getAllQuizzes() {
+		return this.quizRepo.findAll();
+	}
+
+	@Override
+	public Quiz getQuiz(Long quizId) {
+		return this.quizRepo.findById(quizId);
+	}
+
+}

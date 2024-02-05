@@ -1,0 +1,8 @@
+package com.kksg.question.service;
+
+import com.kksg.question.Entities.Question;
+
+public interface QuestionService {
+
+	Question addQuestion(Question question);
+}

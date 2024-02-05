@@ -1,0 +1,28 @@
+package com.kksg.quiz.services.impl;
+
+import java.util.List;
+
+import com.kksg.quiz.entities.Quiz;
+import com.kksg.quiz.services.QuizService;
+
+public class QuizServiceImpl implements QuizService {
+
+	@Override
+	public Quiz addQuiz(Quiz quiz) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Quiz> getAllQuizzes() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Quiz getQuiz(Long quizId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

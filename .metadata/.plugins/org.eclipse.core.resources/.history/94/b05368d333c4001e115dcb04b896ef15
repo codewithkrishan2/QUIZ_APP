@@ -1,0 +1,15 @@
+package com.kksg.quiz.services;
+
+import java.util.List;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+import com.kksg.quiz.entities.Question;
+
+@FeignClient(url = "http://localhost:8082", value="Question-Client")
+public interface QuestionClient {
+
+	//
+	
+	List<Question> getQuestionsOfQuiz();
+}

@@ -1,0 +1,5 @@
+package com.kksg.question.service;
+
+public interface QuestionService {
+
+}

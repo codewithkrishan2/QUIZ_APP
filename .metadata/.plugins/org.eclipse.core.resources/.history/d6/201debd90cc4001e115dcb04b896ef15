@@ -1,0 +1,29 @@
+package com.kksg.quiz.controllers;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.kksg.quiz.entities.Quiz;
+import com.kksg.quiz.services.QuizService;
+
+@RestController
+@RequestMapping("/quiz")
+public class QuizController {
+
+	private QuizService quizService;
+
+	public QuizController(QuizService quizService) {
+		super();
+		this.quizService = quizService;
+	}
+	
+	// add quiz
+	
+	@PostMapping
+	public Quiz addQuiz(@RequestBody Quiz quiz) {
+		return quizService.addQuiz(quiz);
+	}
+	
+}

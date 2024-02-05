@@ -1,0 +1,44 @@
+package com.kksg.question.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.kksg.question.Entities.Question;
+import com.kksg.question.repos.QuestionRepo;
+import com.kksg.question.service.QuestionService;
+
+public class QuestionServiceImpl implements QuestionService {
+
+	@Autowired
+	private QuestionRepo questionRepo;
+	
+	public QuestionServiceImpl() {
+		
+	}
+	
+	public QuestionServiceImpl(QuestionRepo questionRepo) {
+		super();
+		this.questionRepo = questionRepo;
+	}
+	
+	
+	@Override
+	public Question addQuestion(Question question) {
+		
+		return this.questionRepo.save(question);
+	}
+
+	@Override
+	public List<Question> getAllQuestions() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Question getQuestion(Long questionId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

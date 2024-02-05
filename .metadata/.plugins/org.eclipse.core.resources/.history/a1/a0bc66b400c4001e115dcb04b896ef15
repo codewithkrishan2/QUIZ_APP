@@ -1,0 +1,5 @@
+package com.kksg.quiz.entities;
+
+public class Quiz {
+
+}

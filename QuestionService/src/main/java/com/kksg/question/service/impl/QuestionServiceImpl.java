@@ -1,0 +1,48 @@
+package com.kksg.question.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kksg.question.entities.Question;
+import com.kksg.question.repos.QuestionRepo;
+import com.kksg.question.service.QuestionService;
+
+@Service
+public class QuestionServiceImpl implements QuestionService {
+
+	@Autowired
+	private QuestionRepo questionRepo;
+	
+	public QuestionServiceImpl() {
+		
+	}
+	
+	public QuestionServiceImpl(QuestionRepo questionRepo) {
+		super();
+		this.questionRepo = questionRepo;
+	}
+	
+	
+	@Override
+	public Question addQuestion(Question question) {
+		return this.questionRepo.save(question);
+	}
+
+	@Override
+	public List<Question> getAllQuestions() {
+		return this.questionRepo.findAll();
+	}
+
+	@Override
+	public Question getQuestion(Long questionId) {
+		return this.questionRepo.findById(questionId).orElseThrow(()-> new RuntimeException("Question not found"));
+	}
+
+	@Override
+	public List<Question> getQuestionByQuizId(Long quizId) {
+		return questionRepo.findByQuizId(quizId);
+	}
+
+}

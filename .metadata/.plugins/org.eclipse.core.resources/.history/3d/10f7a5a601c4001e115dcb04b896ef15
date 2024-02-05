@@ -1,0 +1,6 @@
+package com.kksg.quiz.services;
+
+
+public interface QuizService {
+
+}

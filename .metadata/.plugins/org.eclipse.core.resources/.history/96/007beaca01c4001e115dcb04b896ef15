@@ -1,0 +1,8 @@
+package com.kksg.quiz.services;
+
+import com.kksg.quiz.entities.Quiz;
+
+public interface QuizService {
+
+	Quiz addQuiz(Quiz quiz); 
+}

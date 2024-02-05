@@ -1,0 +1,54 @@
+package com.kksg.quiz.services.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.kksg.quiz.entities.Quiz;
+import com.kksg.quiz.repos.QuizRepo;
+import com.kksg.quiz.services.QuestionClient;
+import com.kksg.quiz.services.QuizService;
+
+@Service
+public class QuizServiceImpl implements QuizService {
+
+	@Autowired
+	private QuizRepo quizRepo;
+	
+	@Autowired
+	private QuestionClient questionClient;
+	
+	
+	public QuizServiceImpl() {
+		
+	}
+	
+	
+	
+
+	public QuizServiceImpl(QuizRepo quizRepo, QuestionClient questionClient) {
+		this.quizRepo = quizRepo;
+		this.questionClient = questionClient;
+	}
+
+
+
+
+	@Override
+	public Quiz addQuiz(Quiz quiz) {
+		return this.quizRepo.save(quiz);
+		
+	}
+
+	@Override
+	public List<Quiz> getAllQuizzes() {
+		return this.quizRepo.findAll();
+	}
+
+	@Override
+	public Quiz getQuiz(Long quizId) {
+		return this.quizRepo.findById(quizId).orElseThrow(()-> new RuntimeException("Quiz not found"));
+	}
+
+}

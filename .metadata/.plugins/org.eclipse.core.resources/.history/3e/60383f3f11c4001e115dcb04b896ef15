@@ -1,0 +1,6 @@
+package com.kksg.question.controllers;
+
+@
+public class QuestionController {
+
+}

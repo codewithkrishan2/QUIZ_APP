@@ -1,0 +1,5 @@
+package com.kksg.question.Entities;
+
+public class Question {
+
+}
